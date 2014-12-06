@@ -3,13 +3,12 @@ img{
     width: 45%;
 }
 .shell{
-    margin:100px;
     height:600px;
-    width:900px;
+    width:700px;
     overflow-y:scroll;
     overflow-x:hidden;
     box-shadow: 10px 10px 5px #888888;
-    border: 2px solid;
+    border: 1px solid;
 }
 
 .content{
