@@ -2,25 +2,33 @@
  * Created by Michael on 2014-12-05.
  */
 
-
-
 function liveFeed(blogid) {
 
-    $.get( "https://public-api.wordpress.com/rest/v1/sites/"+blogid+"/posts/", function(data) {
+    $.get("https://public-api.wordpress.com/rest/v1/sites/"+blogid+"/posts/", function(data) {
+
+        var source   = $("#content-template").html();
+        var template = Handlebars.compile(source);
+
+        console.log("Total Posts:" + data.posts.length);
+
         $.each(data.posts, function(i, item) {
-            $("#feed-content").append(item.title);
-            $("#feed-content").append(item.content.replace("https","http"));
+            var context = {id: i, title: item.title, content: item.content.replace("https","http")}
+            var html = template(context);
+            $("#feed-content").append(html);
         });
-    })
-        .fail(function(error) {
-            alert( "error: " + error );
-        })
+
+        for(var i=1; i<data.posts.length; i++)
+        {
+            AnimateObject(i);
+        }
+
+        $('#shell').animate({scrollTop: 0},2000).delay(1200);
+    }).fail(function(error) {
+        alert( "error: " + error );
+    });
 }
 
-function scrolldown(){
-    $("#shell").delay(500).animate({
-            opacity: 1,
-            bottom: 0
-        }, 'slow'
-    );
+function AnimateObject(id){
+    var aTag = $("#" + id);
+    $('#shell').animate({scrollTop: aTag.offset().top},2000).delay(1200);
 }

@@ -5,7 +5,7 @@ img{
 .shell{
     height:600px;
     width:700px;
-    overflow-y:scroll;
+    overflow-y:hidden;
     overflow-x:hidden;
     box-shadow: 10px 10px 5px #888888;
     border: 1px solid;

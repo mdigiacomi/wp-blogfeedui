@@ -1,16 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Live Feed</title>
+    <title></title>
 
     <link href="css/main.css" type="text/css" rel="stylesheet" />
-
-    <script src="./js/jquery-2.1.1.js" type="application/javascript"></script>
-    <script src="js/main.js" type="application/javascript"></script>
-
-    <script type="application/javascript">
-        liveFeed(41876073);
-    </script>
 </head>
 <body>
 
@@ -18,9 +11,20 @@
     <div id="feed-content" class="content"></div>
 </div>
 
-<input type="button" name="Click" onclick="scrolldown();" title="Click">Click</input>
+<script src="js/jquery-2.1.1.js" type="application/javascript"></script>
+<script src="js/main.js" type="application/javascript"></script>
+<script src="js/handlebars-v2.0.0.js" type="application/javascript"></script>
 
+<script type="application/javascript">
+    liveFeed(41876073);
+</script>
 
+<script id="content-template" type="text/x-handlebars-template">
+  <div id="{{{id}}}" style="padding-top:10px;">
+  	<div id="title" style="font-weight:600;">{{{title}}}</div>
+  	<div id="content">{{{content}}}</div>
+  </div>
+</script>
 
 </body>
 </html>
