@@ -12,19 +12,18 @@ function liveFeed(blogid) {
         console.log("Total Posts:" + data.posts.length);
 
         $.each(data.posts, function(i, item) {
-            var context = {id: i, title: item.title, content: item.content.replace("https","http")}
-            var html = template(context);
-            $("#feed-content").append(html);
+            if(i<20)
+            {
+                var context = {id: i, title: item.title, content: item.content.replace("https","http")}
+                var html = template(context);
+                $("#feed-content").append(html);
+            }
         });
 
         for(var i=1; i<data.posts.length; i++)
         {
-            AnimateObject(i);
+            //AnimateObject(i);
         }
-
-        $('#shell').animate({scrollTop: 0},2000).delay(1200);
-    }).fail(function(error) {
-        alert( "error: " + error );
     });
 }
 
