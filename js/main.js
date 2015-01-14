@@ -2,9 +2,9 @@
  * Created by Michael on 2014-12-05.
  */
 
-function liveFeed(blogid) {
+function liveFeed(blogid, count, tag) {
 
-    $.get("https://public-api.wordpress.com/rest/v1/sites/"+blogid+"/posts/", function(data) {
+    $.get("https://public-api.wordpress.com/rest/v1/sites/"+blogid+"/posts?number=" + count + "&tag=" + tag, function(data) {
 
         var source   = $("#content-template").html();
         var template = Handlebars.compile(source);
