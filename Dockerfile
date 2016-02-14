@@ -2,13 +2,15 @@ FROM nginx
 
 COPY . /usr/share/nginx/html
 
-RUN apt-get install wget
+RUN apt-get -y update && apt-get -y install wget git-core sudo npm build-essential nodejs
 
-RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+RUN cd /usr/share/nginx/html
 
-RUN ~/.nvm/nvm.sh install v0.12.7
+RUN  npm install -g bower
 
-RUN ~/.nvm/npm install 
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+RUN cd /usr/share/nginx/html/ && bower --allow-root install
 
 EXPOSE 80
 EXPOSE 443
