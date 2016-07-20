@@ -14,7 +14,7 @@ function liveFeed(blogid, count, tag) {
         $.each(data.posts, function(i, item) {
             if(i<20)
             {
-                var context = {id: i, title: item.title, content: item.content.replace("https","http").replace("https","http").replace("https","http").replace("https","http").replace("https","http")}
+                var context = {id: i, title: item.title, content: item.content.replace("https","http").replace("https","http").replace("https","http").replace("https","http").replace("https","http").split('?','')[0]}
                 var html = template(context);
                 $("#feed-content").append(html);
             }
