@@ -10,6 +10,7 @@ COPY . /usr/src/app/
 RUN npm install -g http-server
 RUN npm install
 RUN ls
+RUN ls /usr/src/app/
 
 CMD [ "http-server", " -p 80 /usr/src/app/" ]
 EXPOSE 80
