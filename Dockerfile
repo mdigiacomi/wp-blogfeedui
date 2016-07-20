@@ -11,5 +11,5 @@ RUN npm install -g http-server
 RUN npm install
 RUN ls node_modules/handlebars/dist/
 
-CMD [ "http-server -p 80", "." ]
+CMD [ "http-server", " -p 80 ." ]
 EXPOSE 80
