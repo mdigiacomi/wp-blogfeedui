@@ -9,7 +9,7 @@ COPY . /usr/src/app/
 
 RUN npm install -g http-server
 RUN npm install
-RUN ls node_modules/handlebars/dist/
+RUN ls
 
-CMD [ "http-server", " -p 80 ." ]
+CMD [ "http-server", " -p 80 /usr/src/app/" ]
 EXPOSE 80
