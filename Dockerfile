@@ -1,12 +1,15 @@
-FROM nginx
+FROM node:4.4.7
 
-COPY . /usr/share/nginx/html
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-RUN apt-get -y update && apt-get -y install wget git-core npm nodejs
+# Copy Project to Docker Container
+COPY . /usr/src/app/
 
-RUN  npm install -g bower && ln -s /usr/bin/nodejs /usr/bin/node
+RUN npm install -g http-server
+RUN npm install
+RUN ls node_modules/handlebars/dist/
 
-RUN cd /usr/share/nginx/html/ && bower --allow-root install
-
-EXPOSE 80
-EXPOSE 443
+CMD [ "http-server", "." ]
+EXPOSE 8080

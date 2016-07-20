@@ -1,0 +1,15 @@
+{
+  "name": "wp-blogfeedui",
+  "version": "1.0.0",
+  "description": "Wordpress Blog Feed UI",
+  "author": "Michael Di Giacomi <me@michaeldigiacomi.com>",
+  "main": "http-server .",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "handlebars": "~3.0.3",
+    "jquery": "~2.1.4"
+  }
+}
