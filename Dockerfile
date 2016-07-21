@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Copy Project to Docker Container
 COPY . /usr/src/app/
 
+# Setup Environment
 RUN npm install -g http-server
 RUN npm install
 RUN ls
