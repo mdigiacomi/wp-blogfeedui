@@ -12,5 +12,5 @@ RUN npm install
 RUN ls
 RUN ls /usr/src/app/
 
-CMD [ "http-server", " -d -i -p 80 /usr/src/app/" ]
-EXPOSE 80
+CMD [ "http-server", "." ]
+EXPOSE 8080
