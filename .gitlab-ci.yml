@@ -13,8 +13,7 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME"
 
 deploy:
-  image: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
-  environment: production
-  only:
-    - master
-  script: git push dokku@dev.michaeldigiacomi.com:wp-blogfeedui master
+  stage: deploy
+  script: 
+    - git clone https://mdigiacomi@gitlab.com/mdigiacomi/wp-blogfeedui.git
+    - git push dokku@dev.michaeldigiacomi.com:wp-blogfeedui master
