@@ -13,7 +13,7 @@ build:
     - docker push "$CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME"
 
 deploy:
-  image: $CI_REGISTRY_IMAGE/$CI_BUILD_REF_NAME
+  image: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
   environment: production
   only:
     - master
