@@ -17,4 +17,4 @@ deploy:
   environment: production
   only:
     - master
-  script: git-push dokku@dev.michaeldigiacomi.com:wp-blogfeedui
+  script: git push dokku@dev.michaeldigiacomi.com:wp-blogfeedui
