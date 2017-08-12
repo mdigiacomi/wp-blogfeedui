@@ -1,4 +1,4 @@
-node("docker") {
+node {
     docker.withRegistry('registry.gitlab.com/mdigiacomi/wp-blogfeedui', 'VPPd2JQ8WgxBLJzEZrX8') {
     
         git url: "https://gitlab.com/mdigiacomi/wp-blogfeedui.git", credentialsId: 'VPPd2JQ8WgxBLJzEZrX8'
